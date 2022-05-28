@@ -3,6 +3,7 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 import ElementUI from 'element-ui';
+import './assets/css/global.css';
 import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(ElementUI);

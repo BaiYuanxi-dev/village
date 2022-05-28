@@ -1,7 +1,8 @@
 <template>
-  <div id="welcome">
-      <button @click="test">111</button>
-    <img :src="img1Url" />
+  <div id="welcome" @click="test">
+    <img :src="img1Url" class="img1"  />
+    <img :src="img2Url" class="img2"  />
+    <div class="underImg">点击任意位置进入</div>
   </div>
 </template>
 
@@ -10,6 +11,7 @@ export default {
   data() {
     return {
       img1Url: require("../assets/img/pho2.png"),
+      img2Url: require("../assets/img/pho1.png"),
     };
   },
   methods:{
@@ -17,24 +19,18 @@ export default {
           this.$router.push('/home');
       }
   },
-  mounted() {
-    document.addEventListener("click", function (event) {
-        console.log("点击");
-        this.$router.push('/home');
-    });
-  },
 };
 </script>
 
 <style scoped>
-#welcome {
-  background: url("../assets/img/all_bg.png");
-  background-size: 100% 100%;
-  height: 100%;
-  position: fixed;
-  width: 100%;
+.img2 {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top: 70%;
+  left: 0%;
 }
-img {
+.img1 {
   position: absolute;
   width: 26%;
   height: 34%;
@@ -42,5 +38,12 @@ img {
   left: 50%;
   margin-top: -13%;
   margin-left: -14%;
+}
+.underImg{
+  position: absolute;
+  width: 26%;
+  height: 34%;
+  top: 60%;
+  left: 47%;
 }
 </style>

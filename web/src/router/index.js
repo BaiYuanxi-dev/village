@@ -14,6 +14,11 @@ const routes = [
     name: 'home',
     component: () => import('../pages/Home')
   },
+  {
+    path: '/mainPages',
+    name: 'MainPages',
+    component: () => import('../pages/MainPages')
+  },
 ]
 
 const router = new VueRouter({
