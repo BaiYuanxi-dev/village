@@ -3,8 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'start',
     component: () => import('../pages/Start')
@@ -15,9 +14,15 @@ const routes = [
     component: () => import('../pages/Home')
   },
   {
+<<<<<<< Updated upstream
     path: '/mainPages',
     name: 'MainPages',
     component: () => import('../pages/MainPages')
+=======
+    path: '/MainPage',
+    name: 'MainPage',
+    component: () => import('../pages/MainPage')
+>>>>>>> Stashed changes
   },
 ]
 
