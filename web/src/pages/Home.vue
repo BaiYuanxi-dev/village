@@ -1,46 +1,42 @@
 <template>
-  <div id="home">
-    <el-container>
-      <el-header>
-        <el-row>
-          <el-col :span="20">
-            <div style="margin-top: 2%">
-              <img :src="img1Url" alt="" style="margin-left: 20%" />
-            </div>
-          </el-col>
-          <el-col :span="4">
-            <el-menu
-              style="margin-top: 7%"
-              :default-active="activeIndex2"
-              mode="horizontal"
-              @select="handleSelect"
-              background-color="#161f21"
-              text-color="#fff"
-              active-text-color="#161f21"
-            >
-              <el-menu-item index="1">
-                <el-button  style="font-size:18px;" type="info" round>登录</el-button>
-              </el-menu-item>
-              <el-menu-item index="2">
-                <el-button  round class="registBt">注册</el-button>
-              </el-menu-item>
-            </el-menu>
-          </el-col>
-        </el-row>
-      </el-header>
-      <el-main class="main">  
-        <el-button type="primary" class="bt1" @click="inCharts()"></el-button>
-        <el-button type="primary" class="bt2"></el-button>
-        <el-button type="primary" class="bt3"></el-button>
-        <el-button type="primary" class="bt4">4</el-button>
-        <div>dd</div>
-      </el-main>
-    </el-container>
+  <el-container id="home">
+    <el-header>
+      <el-row>
+        <el-col :span="20">
+          <div>Logo</div>
+        </el-col>
+        <el-col :span="4" style="margin-top: 15px">
+          <el-button style="font-size: 18px" type="info" round>登录</el-button>
+          <el-button round class="registBt">注册</el-button>
+        </el-col>
+      </el-row>
+    </el-header>
+    <el-main class="d2">
+      <div class="upL">
+        <el-button class="bt1" @click="goToCharts">
+          <img :src="bt1" alt="" style="padding:0">
+        </el-button>
+      </div>
 
-    <!-- <el-row class="main">
-      Main
-    </el-row> -->
-  </div>
+      <div class="upR">
+        <el-button class="bt2">
+          <img :src="bt2" alt="">
+        </el-button>
+      </div>
+
+      <div class="downL">
+        <el-button class="bt3">
+          <img :src="bt3" alt="">
+        </el-button>
+      </div>
+
+      <div class="downR">
+        <el-button class="bt4">
+          <img :src="bt4" alt="">
+        </el-button>
+      </div>
+    </el-main>
+  </el-container>
 </template>
 
 <script>
@@ -50,106 +46,110 @@ export default {
   data() {
     return {
       img1Url: require("../assets/img/title.png"),
-      bg: require("../assets/img/page2_below.png"),
-      activeIndex2: "1",
+      bg: require("../assets/img/page2_bg2.jpg"),
+      bt1: require("../assets/img/page2/bt1.1.png"),
+      bt2: require("../assets/img/page2/bt1.2.png"),
+      bt3: require("../assets/img/page2/bt1.3.png"),
+      bt4: require("../assets/img/page2/bt1.4.png"),
     };
   },
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
-    inCharts(){
+    goToCharts() {
       //页面跳转
-    }
+      this.$router.push('/MainPage');
+    },
   },
 };
 </script>
 
 <style scoped>
-.el-header {
-  background-color: #161f21;
-  color: rgb(240, 239, 239);
-  text-align: center;
-  line-height: 80px;
+#home {
+  background-image: url(../assets/img/page2_bg2.jpg);
+  background-repeat: "no-repeat";
+  background-size: 100% 100%;
+  height: 100%;
+  position: fixed;
+  width: 100%;
 }
 
 .registBt {
   background-color: #161f21;
   color: #fff;
-  font-size:18px;
+  font-size: 18px;
+  opacity: 0.6;
 }
 
-/* .main {
-  height: 80%;
-  background-image: url(../assets/img/page2_below.png);
-  background-repeat: "no-repeat";
-  background-size: "100% 100%";
-} */
-
-.el-main {
-    background-color: #E9EEF3;
-    color: #333;
-    text-align: center;
-    line-height: 800px;
-    background-image: url(../assets/img/page2_below2.png);
-    background-repeat: "no-repeat";
-    background-size: 100% 100%;
-  }
-.el-menu.el-menu--horizontal{
-      border-bottom: solid 0px #e6e6e6;
+.registBt:hover {
+  opacity: 0.9;
 }
-.bt1{
-  
+.el-menu.el-menu--horizontal {
+  border-bottom: solid 0px #e6e6e6;
+}
+.d2 .upL {
+  width: 50%;
   position: absolute;
-  width: 12%;
-  height: 13%;
-  top: 38.5%;
-  left: 3.7%;
-  opacity:0;
-  /* background-color:transparent;
-  border-style:none; */
+  height: 50%;
 }
+
+.d2 .upR {
+  width: 50%;
+  position: absolute;
+  height: 50%;
+  left: 50%;
+}
+
+.d2 .downL {
+  top: 50%;
+  width: 50%;
+  position: absolute;
+  height: 50%;
+}
+
+.d2 .downR {
+  top: 50%;
+  width: 50%;
+  position: absolute;
+  height: 50%;
+  left: 50%;
+}
+
+.bt1{
+  margin-top:10%;
+  margin-left:10%;
+  opacity: 0.6;
+}
+
 .bt1:hover{
-  opacity:0.5;
+  opacity: 0.8;
 }
 
 .bt2{
-  
-  position: absolute;
-  width: 12%;
-  height: 13%;
-  top: 38.2%;
-  left: 84%;
-  opacity:0;
-  /* background-color:transparent;
-  border-style:none; */
-}
-.bt2:hover{
-  opacity:0.5;
+  margin-top:10%;
+  margin-left:50%;
+  opacity: 0.6;
 }
 
+.bt2:hover{
+  opacity: 0.8;
+}
 .bt3{
-  
-  position: absolute;
-  width: 12%;
-  height: 13%;
-  top: 71.3%;
-  left: 3.2%;
-  opacity:0;
+  margin-top:10%;
+  margin-left:10%;
+  opacity: 0.6;
 }
 .bt3:hover{
-  opacity:0.5;
+  opacity: 0.8;
 }
-.bt4{
 
-  position: absolute;
-   width: 12%;
-  height: 13%;
-  top: 71.3%;
-  left: 84%;
-  opacity:0; 
+.bt4{
+  margin-top:10%;
+  margin-left:50%;
+  opacity: 0.6;
 }
 .bt4:hover{
-  opacity:0.5;
-} 
+  opacity: 0.8;
+}
 </style>

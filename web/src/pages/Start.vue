@@ -1,13 +1,8 @@
 <template>
   <div id="welcome" @click="test">
-<<<<<<< Updated upstream
     <img :src="img1Url" class="img1"  />
     <img :src="img2Url" class="img2"  />
     <div class="underImg">点击任意位置进入</div>
-=======
-    <!-- <button @click="test">111</button> -->
-    <img :src="img1Url" />
->>>>>>> Stashed changes
   </div>
 </template>
 
@@ -15,12 +10,8 @@
 export default {
   data() {
     return {
-<<<<<<< Updated upstream
       img1Url: require("../assets/img/pho2.png"),
       img2Url: require("../assets/img/pho1.png"),
-=======
-      img1Url: require("../assets/img/pho2.png")
->>>>>>> Stashed changes
     };
   },
   methods: {
@@ -28,15 +19,6 @@ export default {
       this.$router.push("/home");
     }
   },
-<<<<<<< Updated upstream
-=======
-  mounted() {
-    document.addEventListener("click", function(event) {
-      console.log("点击");
-      this.$router.push("/home");
-    });
-  }
->>>>>>> Stashed changes
 };
 </script>
 

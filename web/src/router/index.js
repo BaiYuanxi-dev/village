@@ -14,15 +14,9 @@ const routes = [{
     component: () => import('../pages/Home')
   },
   {
-<<<<<<< Updated upstream
-    path: '/mainPages',
-    name: 'MainPages',
-    component: () => import('../pages/MainPages')
-=======
     path: '/MainPage',
     name: 'MainPage',
     component: () => import('../pages/MainPage')
->>>>>>> Stashed changes
   },
 ]
 
