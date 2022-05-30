@@ -1,0 +1,59 @@
+<template>
+  <div class="Echarts">
+    <div id="echart2" style="width: 100%; height: 300px"></div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "spaceChart2",
+  mounted() {
+    this.myChart = this.$echarts.init(document.getElementById("echart2"));
+    this.updateEcharts();
+  },
+  methods: {
+    updateEcharts() {
+      this.option = {
+        title: {
+          text: "资产信息",
+          subtext: "资产总值",
+          left: "center",
+        },
+        tooltip: {
+          trigger: "item",
+        },
+        legend: {
+          orient: "vertical",
+          left: 60,
+        },
+        series: [
+          {
+            name: "Access From",
+            type: "pie",
+            radius: "50%",
+            data: [
+              { value: 2770.93, name: "土地" },
+              { value: 64005.39, name: "房屋" },
+              { value: 58917.84, name: "水池" },
+              { value: 141550.5, name: "山林" },
+              { value: 786520, name: "现金" },
+            ],
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: "rgba(0, 0, 0, 0.5)",
+              },
+            },
+          },
+        ],
+      };
+      this.myChart.setOption(this.option);
+    },
+  },
+};
+</script>
+
+<style scoped>
+
+</style>

@@ -32,9 +32,27 @@
         <div id="space">
           <div>空间资源！</div>
           <div>SPACE RESOURCES</div>
-          <div class="Echarts">
-            <div id="echart1" style="width: 100%; height: 300px"></div>
-          </div>
+          <el-row>
+            <el-col :span="12">
+              <spaceChart1_1></spaceChart1_1>
+            </el-col>
+            <el-col :span="12">
+              <spaceChart1_2></spaceChart1_2>
+            </el-col>
+          </el-row>
+          <el-row>
+            <spaceChart2></spaceChart2>
+          </el-row>
+          <el-row>
+            <el-col :span="12">
+              <spaceChart3_1></spaceChart3_1>
+            </el-col>
+            <el-col :span="12">
+              <spaceChart3_2></spaceChart3_2>
+            </el-col>
+          </el-row>
+          <!-- <spaceChart1></spaceChart1>
+          <spaceChart2></spaceChart2> -->
         </div>
       </el-col>
       <el-col :span="7">
@@ -52,23 +70,33 @@
     </el-row>
 
     <div id="bottom">
-      <!-- <button @click="test">111</button> -->
       <img :src="img1Url" />
     </div>
   </div>
 </template>
 
 <script>
+import spaceChart1_1 from "../components/charts1/spaceChart1_1.vue";
+import spaceChart1_2 from "../components/charts1/spaceChart1_2.vue";
+import spaceChart1 from "../components/charts1/spaceChart1_3.vue";
+import spaceChart2 from "../components/charts1/spaceChart2.vue";
+import spaceChart3_1 from "../components/charts1/spaceChart3_1.vue";
+import spaceChart3_2 from "../components/charts1/spaceChart3_2.vue";
 export default {
+  components: {
+    spaceChart1_1,
+    spaceChart1_2,
+    spaceChart1,
+    spaceChart2,
+    spaceChart3_1,
+    spaceChart3_2,
+  },
   data() {
     return {
-      img1Url: require("../assets/img/pho1.png")
+      img1Url: require("../assets/img/pho1.png"),
     };
   },
-  mounted() {
-    this.myChart = this.$echarts.init(document.getElementById("echart1"));
-    this.updateEcharts();
-  },
+
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
@@ -76,101 +104,7 @@ export default {
     handleClose(key, keyPath) {
       console.log(key, keyPath);
     },
-    updateEcharts() {
-      // 指定图表的配置项和数据
-      this.option = {
-        title: {
-          text: "成员信息"
-        },
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            type: "cross",
-            label: {
-              backgroundColor: "#6a7985"
-            }
-          }
-        },
-        legend: {
-          data: ["成员社", "贫困户", "党员", "社员"]
-        },
-        toolbox: {
-          feature: {
-            // saveAsImage: {}
-          }
-        },
-        grid: {
-          left: "3%",
-          right: "4%",
-          //   bottom: "3%",
-          containLabel: true
-        },
-        xAxis: [
-          {
-            type: "category",
-            boundaryGap: false,
-            data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-          }
-        ],
-        yAxis: [
-          {
-            type: "value",
-            axisLine: {
-              symbol: ["none", "arrow"],
-              symbolOffset: [0, 8]
-            }
-          }
-        ],
-        series: [
-          {
-            color: "#0bad57",
-            name: "成员社",
-            type: "line",
-            stack: "Total",
-            areaStyle: {},
-            emphasis: {
-              focus: "series"
-            },
-            data: [17, 17, 17, 17, 17, 17, 17]
-          },
-          {
-            color: "#0ba5ad",
-            name: "贫困户",
-            type: "line",
-            stack: "Total",
-            areaStyle: {},
-            emphasis: {
-              focus: "series"
-            },
-            data: [227, 227, 227, 227, 227, 227, 227]
-          },
-          {
-            color: "#0b82c8",
-            name: "党员",
-            type: "line",
-            stack: "Total",
-            areaStyle: {},
-            emphasis: {
-              focus: "series"
-            },
-            data: [431, 431, 431, 431, 431, 431, 431]
-          },
-          {
-            name: "社员",
-            type: "line",
-            stack: "Total",
-            areaStyle: {},
-            emphasis: {
-              focus: "series"
-            },
-            data: [1472, 1472, 1472, 1472, 1472, 1472, 1472]
-          }
-        ]
-      };
-      // 使用刚指定的配置项和数据显示图表。
-      this.myChart.setOption(this.option);
-    }
-  }
+  },
 };
 </script>
 
