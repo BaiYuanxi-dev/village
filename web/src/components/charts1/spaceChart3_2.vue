@@ -1,6 +1,6 @@
 <template>
   <div class="Echarts">
-    <div id="echart3_2" style="width: 100%; height: 300px"></div>
+    <div id="echart3_2" style="width: 100%; height: 200px"></div>
   </div>
 </template>
 
@@ -15,43 +15,45 @@ export default {
     updateEcharts() {
       this.option = {
         title: {
-          text: "资产信息",
-          subtext: "资产总值",
-          left: "center",
+          subtext: "房屋",
+          x: 91,
+          y: 17
         },
         tooltip: {
-          trigger: "item",
+          trigger: "item"
         },
-        legend: {
-          orient: "vertical",
-          left: 20,
-        },
-        color:['red','#efa960'],
+        color: ["red", "#efa960"],
         series: [
           {
-            name: "Access From",
+            center: ["45%", "55%"],
+            name: ["已用", "未用"],
+            label: {
+              show: true,
+              position: "outside",
+              fontSize: 12,
+              overflow: "break"
+            },
             type: "pie",
-            radius: "50%",
+            radius: "60%",
             data: [
-              { value: 20, name: "已用" },
-              { value: 80, name: "未用" },
+              { value: 20, name: "已用20%" },
+              { value: 80, name: "未用80%" }
             ],
             emphasis: {
               itemStyle: {
                 shadowBlur: 10,
                 shadowOffsetX: 0,
-                shadowColor: "rgba(0, 0, 0, 0.5)",
-              },
-            },
-          },
-        ],
+                shadowColor: "rgba(0, 0, 0, 0.5)"
+              }
+            }
+          }
+        ]
       };
       this.myChart.setOption(this.option);
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style scoped>
-
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="welcome" @click="test">
-    <img :src="img1Url" class="img1"  />
-    <img :src="img2Url" class="img2"  />
+    <img :src="img1Url" class="img1" />
+    <img :src="img2Url" class="img2" />
     <div class="underImg">点击任意位置进入</div>
   </div>
 </template>
@@ -11,14 +11,14 @@ export default {
   data() {
     return {
       img1Url: require("../assets/img/pho2.png"),
-      img2Url: require("../assets/img/pho1.png"),
+      img2Url: require("../assets/img/pho1.png")
     };
   },
   methods: {
     test() {
       this.$router.push("/home");
     }
-  },
+  }
 };
 </script>
 
@@ -39,7 +39,7 @@ export default {
   margin-top: -13%;
   margin-left: -14%;
 }
-.underImg{
+.underImg {
   position: absolute;
   width: 26%;
   height: 34%;
