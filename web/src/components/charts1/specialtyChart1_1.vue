@@ -1,6 +1,6 @@
 <template>
-  <div class="Echart2">
-    <div id="echarts1_1" style="width: 100%; height: 240px; margin-left:10px"></div>
+  <div class="Echarts">
+    <div id="echarts1_1" style="width: 100%; height: 230px; margin-left:10px"></div>
   </div>
 </template>
 
@@ -56,7 +56,7 @@ export default {
           {
             type: "group",
             left: "center",
-            bottom: 10,
+            bottom: 25,
             children: [
               {
                 type: "rect",
@@ -65,7 +65,7 @@ export default {
                 top: 0,
                 shape: {
                   width: 100,
-                  height: 50
+                  height: 20
                 },
                 style: {
                   fill: "#f7f7f7"

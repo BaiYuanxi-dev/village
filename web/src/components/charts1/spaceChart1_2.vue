@@ -94,7 +94,7 @@ export default {
             axisTick: {
               show: false
             },
-            splitLine: { show: false } // 不展示横向的网格线
+            splitLine: { show: true } // 不展示横向的网格线
           }
         ],
         series: [

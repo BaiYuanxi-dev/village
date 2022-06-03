@@ -89,6 +89,17 @@
               <specialtyChart1_3></specialtyChart1_3>
             </el-col>
           </el-row>
+          <el-row>
+            <el-col :span="8">
+              <specialtyChart2_1></specialtyChart2_1>
+            </el-col>
+            <el-col :span="8">
+              <specialtyChart2_2></specialtyChart2_2>
+            </el-col>
+            <el-col :span="8">
+              <specialtyChart2_3></specialtyChart2_3>
+            </el-col>
+          </el-row>
         </div>
       </el-col>
       <el-col :span="7">
@@ -116,6 +127,9 @@ import spaceChart3_2 from "../components/charts1/spaceChart3_2.vue";
 import specialtyChart1_1 from "../components/charts1/specialtyChart1_1.vue";
 import specialtyChart1_2 from "../components/charts1/specialtyChart1_2.vue";
 import specialtyChart1_3 from "../components/charts1/specialtyChart1_3.vue";
+import specialtyChart2_1 from "../components/charts1/specialtyChart2_1.vue";
+import specialtyChart2_2 from "../components/charts1/specialtyChart2_2.vue";
+import specialtyChart2_3 from "../components/charts1/specialtyChart2_3.vue";
 export default {
   components: {
     spaceChart1_1,
@@ -126,7 +140,10 @@ export default {
     spaceChart3_2,
     specialtyChart1_1,
     specialtyChart1_2,
-    specialtyChart1_3
+    specialtyChart1_3,
+    specialtyChart2_1,
+    specialtyChart2_2,
+    specialtyChart2_3
   },
   data() {
     return {
