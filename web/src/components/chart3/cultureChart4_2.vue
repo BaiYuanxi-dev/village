@@ -1,35 +1,36 @@
 <template>
   <div class="Echarts">
-    <div id="echarts2_1" style="width: 100%; height: 240px; margin-left:10px"></div>
+    <div id="culecharts4_2" style="width: 100%; height: 240px; margin-left:10px"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "specialtyChart2_1",
+  name: "cultureChart4_2",
   mounted() {
-    this.myChart = this.$echarts.init(document.getElementById("echarts2_1"));
+    this.myChart = this.$echarts.init(document.getElementById("culecharts4_2"));
     this.updateEcharts();
   },
   methods: {
     updateEcharts() {
       this.option = {
-        tooltip: {
-          trigger: "axis",
-          transitionDuration: 0,
-        },
+        // tooltip: {
+        //   trigger: "axis",
+        //   transitionDuration: 0,
+        // },
         legend: {
-          data: ["手工艺", "便利店", "特产"],
-          left: 0,
-          top: 155,
+          data: ["特色", "小吃", "大众"],
+          left: 60,
+          top: 180,
           itemWidth: 5,
           itemHeight: 5
         },
         grid: {
-          //   x: 0,
-          y: 30,
-          height: 120,
-          containLabel: true
+          // top:"1%",
+          left: "3%",
+          right: "4%",
+          bottom: "29%",
+          containLabel: true,
         },
         xAxis: {
           type: "category",
@@ -49,6 +50,9 @@ export default {
           nameTextStyle: {
             fontSize: 11
           },
+          nameTextStyle:{
+              padding:[0,0,0,20],
+          },
           axisLine: {
             show: true,
             symbol: ["none", "arrow"],
@@ -59,22 +63,22 @@ export default {
         },
         series: [
           {
-            name: "手工艺",
+            name: "特色",
             type: "line",
             // stack: "Total",
-            data: [20, 28, 42, 50, 30]
+            data: [100, 40, 200, 60, 100]
           },
           {
-            name: "便利店",
+            name: "小吃",
             type: "line",
             // stack: "Total",
-            data: [58, 62, 18, 20, 48]
+            data: [300, 100, 220, 150, 200]
           },
           {
-            name: "特产",
+            name: "大众",
             type: "line",
             // stack: "Total",
-            data: [42, 15, 61, 76, 80]
+            data: [200, 300, 100, 200, 400]
           }
         ]
       };

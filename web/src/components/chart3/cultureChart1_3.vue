@@ -28,6 +28,7 @@ export default {
         tooltip: {
           trigger: "item",
           formatter: "{b} : {c} ({d}%)",
+          transitionDuration: 0,
         },
         color:['#dd7b4a','#57c2d7','#218659'],
         series: [

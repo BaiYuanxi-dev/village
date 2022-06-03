@@ -101,6 +101,30 @@
             <cultureChart2_3></cultureChart2_3>
           </el-col>
         </el-row>
+        <el-divider><i class="el-icon-mobile-phone"></i></el-divider>
+        <div id="eat">餐饮数据</div>
+        <el-row>
+          <el-col :span="8">
+            <cultureChart3_1></cultureChart3_1>
+          </el-col>
+          <el-col :span="8">
+            <cultureChart3_2></cultureChart3_2>
+          </el-col>
+          <el-col :span="8">
+            <cultureChart3_3></cultureChart3_3>
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col :span="8">
+            <cultureChart4_1></cultureChart4_1>
+          </el-col>
+          <el-col :span="8">
+            <cultureChart4_2></cultureChart4_2>
+          </el-col>
+          <el-col :span="8">
+            <cultureChart4_3></cultureChart4_3>
+          </el-col>
+        </el-row>
       </div>
     </el-col>
   </div>
@@ -127,6 +151,14 @@ import cultureChart1_3 from "../components/chart3/cultureChart1_3.vue";
 import cultureChart2_1 from "../components/chart3/cultureChart2_1.vue";
 import cultureChart2_2 from "../components/chart3/cultureChart2_2.vue";
 import cultureChart2_3 from "../components/chart3/cultureChart2_3.vue";
+
+import cultureChart3_1 from "../components/chart3/cultureChart3_1.vue";
+import cultureChart3_2 from "../components/chart3/cultureChart3_2.vue";
+import cultureChart3_3 from "../components/chart3/cultureChart3_3.vue";
+
+import cultureChart4_1 from "../components/chart3/cultureChart4_1.vue";
+import cultureChart4_2 from "../components/chart3/cultureChart4_2.vue";
+import cultureChart4_3 from "../components/chart3/cultureChart4_3.vue";
 export default {
   components: {
     spaceChart1_1,
@@ -147,7 +179,14 @@ export default {
     cultureChart1_3,
     cultureChart2_1,
     cultureChart2_2,
-    cultureChart2_3
+    cultureChart2_3,
+    cultureChart3_1,
+    cultureChart3_2,
+    cultureChart3_3,
+    cultureChart4_1,
+    cultureChart4_2,
+    cultureChart4_3,
+
   },
   data() {
     return {
@@ -236,7 +275,8 @@ export default {
 
 #union,
 #purchase,
-#live {
+#live,
+#eat {
   background-color: #fafafa;
   text-align: left;
   padding-left: 35px;

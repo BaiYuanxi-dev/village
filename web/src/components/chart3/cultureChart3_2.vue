@@ -1,17 +1,17 @@
 <template>
   <div class="Echart">
     <div
-      id="culecharts1_2"
-      style="width: 100%; height: 240px; margin-left: 10px"
+      id="culecharts3_2"
+      style="width: 100%; height: 200px; margin-left: 10px"
     ></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "cultureChart1_2",
+  name: "cultureChart3_2",
   mounted() {
-    this.myChart = this.$echarts.init(document.getElementById("culecharts1_2"));
+    this.myChart = this.$echarts.init(document.getElementById("culecharts3_2"));
     this.updateEcharts();
   },
   methods: {
@@ -19,7 +19,7 @@ export default {
       this.option = {
         title: [
           {
-            subtext: "房间数量",
+            subtext: "累计收入",
             x: 40,
             y: 2,
           },
@@ -28,9 +28,8 @@ export default {
         tooltip: {
           trigger: "item",
           formatter: "{b} : {c} ({d}%)",
-          transitionDuration: 0,
         },
-        color:['#cb2440','#216cb6'],
+        color:['#ac6464','#4f76b7','#dc995c'],
         series: [
           {
             // name: "Nightingal111e Chart",
@@ -51,8 +50,9 @@ export default {
               borderRadius: 3,
             },
             data: [
-              { value: 1400, name: "已入住" },
-              { value: 1600, name: "未入住" },
+              { value: 600, name: "大众" },
+              { value: 180, name: "小吃" },
+              { value: 100, name: "特色" },
             ],
             left: 30,
             right: 30,
@@ -71,7 +71,7 @@ export default {
                 type: "rect",
                 z: 100,
                 left: -16,
-                top: 0,
+                top: -15,
                 shape: {
                   width: 100,
                   height: 50,
@@ -94,8 +94,9 @@ export default {
                 style: {
                   fill: "#333",
                   text: [
-                    "· 已入住：1400家",
-                    "· 未入住：1600家",
+                    "· 大  众：600万",
+                    "· 小  吃：180万",
+                    "· 特  色：100万",
                   ].join("\n"),
                   font: "14px Microsoft YaHei",
                 },
