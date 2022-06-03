@@ -1,7 +1,7 @@
 <template>
-  <div class="Echart">
+  <div class="Echarts">
     <div
-      id="culecharts2_2"
+      id="culecharts2_3"
       style="width: 100%; height: 180px; margin-left: 10px"
     ></div>
   </div>
@@ -9,63 +9,54 @@
 
 <script>
 export default {
-  name: "cultureChart2_2",
+  name: "cultureChart2_3",
   mounted() {
-    this.myChart = this.$echarts.init(document.getElementById("culecharts2_2"));
+    this.myChart = this.$echarts.init(document.getElementById("culecharts2_3"));
     this.updateEcharts();
   },
   methods: {
     updateEcharts() {
       this.option = {
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "shadow",
+          },
+        },
+        legend: {},
         grid: {
-          // top:"1%",
-          left: "3%",
-          right: "4%",
-          bottom: "0%",
+          //   left: "3%",
+          //   right: "4%",
+          bottom: "3%",
           containLabel: true,
         },
-        // title: {
-        //   text: "特性示例：渐变色 阴影 点击缩放",
-        //   subtext: "Feature Sample: Gradient Color, Shadow, Click Zoom",
-        // },
         xAxis: {
-          type: "category",
-          axisLabel: {
-            inside: false,
-            textStyle: {
-                color: '#000',
-                fontSize:'10',
-                itemSize:''
-                
-            }
-          },
-          data: ["太行风情", "峡谷宾馆", "农家惠馆"],
-        },
-        yAxis: {
-          name: "日收入（万元）",
-          nameTextStyle:{
-              padding:[0,0,0,70],
-          },
+          type: "value",
+          boundaryGap: [0, 0.01],
           axisLine: {
             show: true,
           },
-        //   axisTick: {
-        //     show: true,
-        //   },
-          axisLabel: {
-            color: "#999",
-          },
+          max: 11,
           min: 0,
-          max: 5,
-        },
-        dataZoom: [
-          {
-            type: "inside",
+          interval: 2,
+          name:"(万元)",
+          
+          nameTextStyle:{
+              padding:[0,0,0,-40],
           },
-        ],
+        },
+        yAxis: {
+          type: "category",
+          axisLine: {
+            show: true,
+          },
+          data: ["农副 产品", "手工 艺品", "工艺 产品"].map(function (str) {
+            return str.replace(" ", "\n");
+          }),
+        },
         series: [
           {
-            data: [4, 3, 2],
+            data: [10, 9, 8],
             type: "bar",
             showBackground: false,
             barWidth: "16px", //柱体宽度
@@ -77,10 +68,10 @@ export default {
                 /*第五个参数则是一个数组，用于配置颜色的渐变过程。
                           每项为一个对象，包含offset和color两个参数
                         */
-                0,
-                0,
-                0,
                 1,
+                0,
+                0,
+                0,
                 [
                   {
                     //代表渐变色从正上方开始

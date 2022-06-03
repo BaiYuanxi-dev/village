@@ -117,7 +117,7 @@ import cultureChart1_3 from "../components/chart3/cultureChart1_3.vue";
 
 import cultureChart2_1 from "../components/chart3/cultureChart2_1.vue";
 import cultureChart2_2 from "../components/chart3/cultureChart2_2.vue";
-// import cultureChart2_3 from "../components/chart3/cultureChart2_3.vue";
+import cultureChart2_3 from "../components/chart3/cultureChart2_3.vue";
 export default {
 components: {
     spaceChart1_1,
@@ -135,6 +135,7 @@ components: {
     cultureChart1_3,
     cultureChart2_1,
     cultureChart2_2,
+    cultureChart2_3,
   },
   data() {
     return {
