@@ -16,7 +16,15 @@ const routes = [{
   {
     path: '/MainPage',
     name: 'MainPage',
-    component: () => import('../pages/MainPage')
+    component: () => import('../pages/MainPage'),
+    children:[
+      {
+        path:"/",
+        name:"chartPage",
+        component: () => import('../pages/chartPage'),
+      },
+      
+    ]
   },
 ]
 
