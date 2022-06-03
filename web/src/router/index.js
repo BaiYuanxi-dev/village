@@ -19,9 +19,23 @@ const routes = [{
     component: () => import('../pages/MainPage'),
     children:[
       {
-        path:"/",
+        path:"",
+        redirect:"chartPage"
+      },
+      // {
+      //   path:"/",
+      //   name:"chartPage",
+      //   component: () => import('../pages/chartPage'),
+      // },
+      {
+        path:"chartPage",
         name:"chartPage",
         component: () => import('../pages/chartPage'),
+      },
+      {
+        path:"publicityPage",
+        name:"publicityPage",
+        component: () => import('../pages/publicityPage'),
       },
       
     ]
