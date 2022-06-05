@@ -22,6 +22,7 @@ export default {
         // },
         tooltip: {
           trigger: "axis",
+          transitionDuration: 0,
         },
         legend: {
           padding: [15, 0, 0, 0],
@@ -43,6 +44,12 @@ export default {
           type: "category",
           boundaryGap: false,
           data: ["1月", "2月", "3月", "4月", "5月"],
+          axisLine: {
+            show: true,
+            symbol: ["none", "arrow"],
+            symbolSize: [5, 10],
+            symbolOffset: 10
+          },
         },
         yAxis: {
           type: "value",
@@ -51,6 +58,9 @@ export default {
           },
           axisLine: {
             show: true,
+            symbol: ["none", "arrow"],
+            symbolSize: [5, 10],
+            symbolOffset: 10
           },
           name: "月收入（万元）",
           nameTextStyle:{

@@ -15,11 +15,12 @@ export default {
     updateEcharts() {
       this.option = {
         tooltip: {
-          trigger: "axis"
+          trigger: "axis",
+          transitionDuration: 0
         },
         legend: {
           data: ["手工艺", "便利店", "特产"],
-          left: 0,
+          left: -2,
           top: 155,
           itemWidth: 5,
           itemHeight: 5

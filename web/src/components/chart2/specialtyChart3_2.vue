@@ -1,14 +1,14 @@
 <template>
   <div class="Echarts">
-    <div id="echarts1_2" style="width: 100%; height: 230px; margin-left:10px"></div>
+    <div id="echarts3_2" style="width: 100%; height: 200px; margin-left:10px"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "specialtyChart1_2",
+  name: "specialtyChart3_2",
   mounted() {
-    this.myChart = this.$echarts.init(document.getElementById("echarts1_2"));
+    this.myChart = this.$echarts.init(document.getElementById("echarts3_2"));
     this.updateEcharts();
   },
   methods: {
@@ -16,14 +16,14 @@ export default {
       this.option = {
         title: [
           {
-            subtext: "累计收入",
-            x: 40,
-            y: 2
+            subtext: "行车工具",
+            x: 70,
+            y: -10
           }
         ],
         tooltip: {
           trigger: "item",
-          formatter: "{b} : {c} ({d}%)"
+          formatter: "{b} : {c}辆 ({d}%)"
         },
         series: [
           {
@@ -46,9 +46,9 @@ export default {
               borderRadius: 3
             },
             data: [
-              { value: 280, name: "特产" },
-              { value: 150, name: "手工艺" },
-              { value: 47, name: "便利店" }
+              { value: 500, name: "电动车" },
+              { value: 300, name: "自行车" },
+              { value: 200, name: "其他" }
             ]
           }
         ],
@@ -56,12 +56,12 @@ export default {
           {
             type: "group",
             left: "center",
-            bottom: 25,
+            bottom: 20,
             children: [
               {
                 type: "rect",
                 z: 100,
-                left: -30,
+                left: -10,
                 top: 0,
                 shape: {
                   width: 100,
@@ -85,9 +85,9 @@ export default {
                 style: {
                   fill: "#333",
                   text: [
-                    "· 特   产：280万",
-                    "· 手工艺：150万",
-                    "· 便利店：47万"
+                    "· 电动车：500辆",
+                    "· 自行车：300辆",
+                    "· 其   他：200辆"
                   ].join("\n"),
                   font: "14px Microsoft YaHei"
                 }

@@ -34,12 +34,16 @@
               <div id="day">52019-08-08</div>
               <div id="day">52019-08-08</div>
               <div id="day">52019-08-08</div>
+              <div id="day" class="last">52019-08-08</div>
+              <!-- <div id="day">52019-08-08</div> -->
             </el-col>
             <el-col :span="14">
               <div style="border-bottom: solid 2px white; padding-top:5px; padding-bottom:5px;">信息</div>
               <div id="information">业务内容 营业内容</div>
               <div id="information">业务内容 营业内容</div>
               <div id="information">业务内容 营业内容</div>
+              <div id="information" class="last">业务内容 营业内容</div>
+              <!-- <div id="information">业务内容 营业内容</div> -->
             </el-col>
           </el-row>
         </div>
@@ -74,14 +78,25 @@
         </el-row>
         <div id="out">出行数据</div>
         <el-row>
-          <el-col :span="8">
+          <!-- <el-col :span="8">
             <specialtyChart3_1></specialtyChart3_1>
-          </el-col>
-          <el-col :span="8">
+          </el-col>-->
+          <el-col :span="12">
             <specialtyChart3_2></specialtyChart3_2>
           </el-col>
-          <el-col :span="8">
+          <el-col :span="12">
             <specialtyChart3_3></specialtyChart3_3>
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col :span="7">
+            <specialtyChart4_1></specialtyChart4_1>
+          </el-col>
+          <el-col :span="8">
+            <specialtyChart4_2></specialtyChart4_2>
+          </el-col>
+          <el-col :span="9">
+            <specialtyChart4_3></specialtyChart4_3>
           </el-col>
         </el-row>
       </div>
@@ -113,6 +128,32 @@
             <cultureChart2_3></cultureChart2_3>
           </el-col>
         </el-row>
+        <el-divider>
+          <i class="el-icon-mobile-phone"></i>
+        </el-divider>
+        <div id="eat">餐饮数据</div>
+        <el-row>
+          <el-col :span="8">
+            <cultureChart3_1></cultureChart3_1>
+          </el-col>
+          <el-col :span="8">
+            <cultureChart3_2></cultureChart3_2>
+          </el-col>
+          <el-col :span="8">
+            <cultureChart3_3></cultureChart3_3>
+          </el-col>
+        </el-row>
+        <el-row>
+          <el-col :span="8">
+            <cultureChart4_1></cultureChart4_1>
+          </el-col>
+          <el-col :span="8">
+            <cultureChart4_2></cultureChart4_2>
+          </el-col>
+          <el-col :span="8">
+            <cultureChart4_3></cultureChart4_3>
+          </el-col>
+        </el-row>
       </div>
     </el-col>
   </div>
@@ -125,12 +166,19 @@ import spaceChart1 from "../components/charts1/spaceChart1_3.vue";
 import spaceChart2 from "../components/charts1/spaceChart2.vue";
 import spaceChart3_1 from "../components/charts1/spaceChart3_1.vue";
 import spaceChart3_2 from "../components/charts1/spaceChart3_2.vue";
-import specialtyChart1_1 from "../components/charts1/specialtyChart1_1.vue";
-import specialtyChart1_2 from "../components/charts1/specialtyChart1_2.vue";
-import specialtyChart1_3 from "../components/charts1/specialtyChart1_3.vue";
-import specialtyChart2_1 from "../components/charts1/specialtyChart2_1.vue";
-import specialtyChart2_2 from "../components/charts1/specialtyChart2_2.vue";
-import specialtyChart2_3 from "../components/charts1/specialtyChart2_3.vue";
+
+import specialtyChart1_1 from "../components/chart2/specialtyChart1_1.vue";
+import specialtyChart1_2 from "../components/chart2/specialtyChart1_2.vue";
+import specialtyChart1_3 from "../components/chart2/specialtyChart1_3.vue";
+import specialtyChart2_1 from "../components/chart2/specialtyChart2_1.vue";
+import specialtyChart2_2 from "../components/chart2/specialtyChart2_2.vue";
+import specialtyChart2_3 from "../components/chart2/specialtyChart2_3.vue";
+import specialtyChart3_1 from "../components/chart2/specialtyChart3_1.vue";
+import specialtyChart3_2 from "../components/chart2/specialtyChart3_2.vue";
+import specialtyChart3_3 from "../components/chart2/specialtyChart3_3.vue";
+import specialtyChart4_1 from "../components/chart2/specialtyChart4_1.vue";
+import specialtyChart4_2 from "../components/chart2/specialtyChart4_2.vue";
+import specialtyChart4_3 from "../components/chart2/specialtyChart4_3.vue";
 
 import cultureChart1_1 from "../components/chart3/cultureChart1_1.vue";
 import cultureChart1_2 from "../components/chart3/cultureChart1_2.vue";
@@ -139,6 +187,14 @@ import cultureChart1_3 from "../components/chart3/cultureChart1_3.vue";
 import cultureChart2_1 from "../components/chart3/cultureChart2_1.vue";
 import cultureChart2_2 from "../components/chart3/cultureChart2_2.vue";
 import cultureChart2_3 from "../components/chart3/cultureChart2_3.vue";
+
+import cultureChart3_1 from "../components/chart3/cultureChart3_1.vue";
+import cultureChart3_2 from "../components/chart3/cultureChart3_2.vue";
+import cultureChart3_3 from "../components/chart3/cultureChart3_3.vue";
+
+import cultureChart4_1 from "../components/chart3/cultureChart4_1.vue";
+import cultureChart4_2 from "../components/chart3/cultureChart4_2.vue";
+import cultureChart4_3 from "../components/chart3/cultureChart4_3.vue";
 export default {
   components: {
     spaceChart1_1,
@@ -153,13 +209,25 @@ export default {
     specialtyChart2_1,
     specialtyChart2_2,
     specialtyChart2_3,
+    specialtyChart3_1,
+    specialtyChart3_2,
+    specialtyChart3_3,
+    specialtyChart4_1,
+    specialtyChart4_2,
+    specialtyChart4_3,
 
     cultureChart1_1,
     cultureChart1_2,
     cultureChart1_3,
     cultureChart2_1,
     cultureChart2_2,
-    cultureChart2_3
+    cultureChart2_3,
+    cultureChart3_1,
+    cultureChart3_2,
+    cultureChart3_3,
+    cultureChart4_1,
+    cultureChart4_2,
+    cultureChart4_3
   },
   data() {
     return {
@@ -246,9 +314,15 @@ export default {
   padding-top: 10px;
 }
 
+.last {
+  /* background-color: red; */
+  padding-bottom: 27px;
+}
+
 #union,
 #purchase,
 #live,
+#eat,
 #out {
   background-color: #fafafa;
   text-align: left;

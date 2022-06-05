@@ -1,44 +1,42 @@
 <template>
-  <div class="Echart">
-    <div
-      id="culecharts2_2"
-      style="width: 100%; height: 180px; margin-left: 10px"
-    ></div>
+  <div class="Echarts">
+    <div id="echarts4_2" style="width: 100%; height: 190px; margin-left:10px"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "cultureChart2_2",
+  name: "specialtyChart4_1",
   mounted() {
-    this.myChart = this.$echarts.init(document.getElementById("culecharts2_2"));
+    this.myChart = this.$echarts.init(document.getElementById("echarts4_2"));
     this.updateEcharts();
   },
   methods: {
     updateEcharts() {
       this.option = {
-        grid: {
-          // top:"1%",
-          left: "3%",
-          right: "4%",
-          bottom: "0%",
-          containLabel: true,
-        },
         tooltip: {
-          trigger: "axis",
+          trigger: "item",
+          formatter: "{b}: {c}万元",
           axisPointer: {
-            type: "shadow",
+            type: "shadow"
           },
+          transitionDuration: 0
+        },
+        grid: {
+          top: 50,
+          left: "13%",
+          //   right: "4%",
+          bottom: 10,
+          containLabel: true
         },
         xAxis: {
           type: "category",
           axisLabel: {
             inside: false,
             textStyle: {
-                color: '#000',
-                fontSize:'10',
-                itemSize:''
-                
+              color: "#000",
+              fontSize: "10",
+              itemSize: ""
             }
           },
           axisLine: {
@@ -47,12 +45,12 @@ export default {
             symbolSize: [5, 10],
             symbolOffset: 8
           },
-          data: ["太行风情", "峡谷宾馆", "农家惠馆"],
+          data: ["电动车", "自行车", "其它"]
         },
         yAxis: {
           name: "日收入（万元）",
-          nameTextStyle:{
-              padding:[0,0,0,70],
+          nameTextStyle: {
+            padding: [0, 0, 0, 50]
           },
           axisLine: {
             show: true,
@@ -60,23 +58,23 @@ export default {
             symbolSize: [5, 10],
             symbolOffset: 8
           },
-        //   axisTick: {
-        //     show: true,
-        //   },
+          //   axisTick: {
+          //     show: true,
+          //   },
           axisLabel: {
-            color: "#999",
+            color: "#999"
           },
           min: 0,
-          max: 5,
+          max: 5
         },
         dataZoom: [
           {
-            type: "inside",
-          },
+            type: "inside"
+          }
         ],
         series: [
           {
-            data: [4, 3, 2],
+            data: [3, 2.5, 2],
             type: "bar",
             showBackground: false,
             barWidth: "16px", //柱体宽度
@@ -96,22 +94,22 @@ export default {
                   {
                     //代表渐变色从正上方开始
                     offset: 0, //offset范围是0~1，用于表示位置，0是指0%处的颜色
-                    color: "#005BEA",
+                    color: "#005BEA"
                   }, //柱图渐变色
                   {
                     offset: 1, //指100%处的颜色
-                    color: "#00C6FB",
-                  },
+                    color: "#00C6FB"
+                  }
                 ]
-              ),
-            },
-          },
-        ],
+              )
+            }
+          }
+        ]
       };
 
       this.myChart.setOption(this.option);
-    },
-  },
+    }
+  }
 };
 </script>
 

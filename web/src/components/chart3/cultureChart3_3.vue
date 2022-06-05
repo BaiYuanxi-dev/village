@@ -1,82 +1,69 @@
 <template>
-  <div class="Echart">
+  <div class="Echarts">
     <div
-      id="culecharts2_2"
-      style="width: 100%; height: 180px; margin-left: 10px"
+      id="culecharts3_3"
+      style="width: 100%; height: 200px; margin-left: 10px"
     ></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "cultureChart2_2",
+  name: "cultureChart3_3",
   mounted() {
-    this.myChart = this.$echarts.init(document.getElementById("culecharts2_2"));
+    this.myChart = this.$echarts.init(document.getElementById("culecharts3_3"));
     this.updateEcharts();
   },
   methods: {
     updateEcharts() {
       this.option = {
-        grid: {
-          // top:"1%",
-          left: "3%",
-          right: "4%",
-          bottom: "0%",
-          containLabel: true,
-        },
         tooltip: {
           trigger: "axis",
           axisPointer: {
             type: "shadow",
           },
         },
+        legend: {},
+        grid: {
+          //   left: "3%",
+          //   right: "4%",
+          bottom: "3%",
+          containLabel: true,
+        },
         xAxis: {
-          type: "category",
-          axisLabel: {
-            inside: false,
-            textStyle: {
-                color: '#000',
-                fontSize:'10',
-                itemSize:''
-                
-            }
-          },
+          type: "value",
+          boundaryGap: [0, 0.01],
           axisLine: {
             show: true,
             symbol: ["none", "arrow"],
             symbolSize: [5, 10],
             symbolOffset: 8
           },
-          data: ["太行风情", "峡谷宾馆", "农家惠馆"],
+          max: 14,
+          min: 0,
+          interval: 4,
+          name: "(万元)",
+
+          nameTextStyle: {
+            padding: [0, 0, 0, -40],
+          },
         },
         yAxis: {
-          name: "日收入（万元）",
-          nameTextStyle:{
-              padding:[0,0,0,70],
-          },
+          name: "店铺排行榜",
+          type: "category",
           axisLine: {
             show: true,
             symbol: ["none", "arrow"],
             symbolSize: [5, 10],
             symbolOffset: 8
           },
-        //   axisTick: {
-        //     show: true,
-        //   },
-          axisLabel: {
-            color: "#999",
-          },
-          min: 0,
-          max: 5,
+          data: ["农宅 惠馆", "太行 人家", "大峡谷 宾馆"].map(function (str) {
+            return str.replace(" ", "\n");
+          }),
         },
-        dataZoom: [
-          {
-            type: "inside",
-          },
-        ],
         series: [
           {
-            data: [4, 3, 2],
+            data: [8, 10, 12],
             type: "bar",
             showBackground: false,
             barWidth: "16px", //柱体宽度
@@ -88,10 +75,10 @@ export default {
                 /*第五个参数则是一个数组，用于配置颜色的渐变过程。
                           每项为一个对象，包含offset和color两个参数
                         */
-                0,
-                0,
-                0,
                 1,
+                0,
+                0,
+                0,
                 [
                   {
                     //代表渐变色从正上方开始

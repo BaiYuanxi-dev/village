@@ -9,14 +9,19 @@
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
+          @select="handleSelect"
         >
           <el-menu-item index="1">
             <i class="el-icon-location"></i>
-            <span slot="title">资源数字化</span>
+            <span slot="title">
+              <router-link to="/MainPage/chartPage">资源数字化</router-link>
+            </span>
           </el-menu-item>
           <el-menu-item index="2">
             <i class="el-icon-menu"></i>
-            <span slot="title">宣传推荐</span>
+            <span slot="title">
+              <router-link to="/MainPage/publicityPage">宣传推荐</router-link>
+            </span>
           </el-menu-item>
           <el-menu-item index="3">
             <i class="el-icon-document"></i>
@@ -28,7 +33,7 @@
           </el-menu-item>
         </el-menu>
       </el-col>
-      <router-view />
+      <router-view></router-view>
     </el-row>
 
     <div id="bottom">
@@ -39,33 +44,8 @@
 </template>
 
 <script>
-import spaceChart1_1 from "../components/charts1/spaceChart1_1.vue";
-import spaceChart1_2 from "../components/charts1/spaceChart1_2.vue";
-import spaceChart1 from "../components/charts1/spaceChart1_3.vue";
-import spaceChart2 from "../components/charts1/spaceChart2.vue";
-import spaceChart3_1 from "../components/charts1/spaceChart3_1.vue";
-import spaceChart3_2 from "../components/charts1/spaceChart3_2.vue";
-import specialtyChart1_1 from "../components/charts1/specialtyChart1_1.vue";
-import specialtyChart1_2 from "../components/charts1/specialtyChart1_2.vue";
-import specialtyChart1_3 from "../components/charts1/specialtyChart1_3.vue";
-import specialtyChart2_1 from "../components/charts1/specialtyChart2_1.vue";
-import specialtyChart2_2 from "../components/charts1/specialtyChart2_2.vue";
-import specialtyChart2_3 from "../components/charts1/specialtyChart2_3.vue";
 export default {
-  components: {
-    spaceChart1_1,
-    spaceChart1_2,
-    spaceChart1,
-    spaceChart2,
-    spaceChart3_1,
-    spaceChart3_2,
-    specialtyChart1_1,
-    specialtyChart1_2,
-    specialtyChart1_3,
-    specialtyChart2_1,
-    specialtyChart2_2,
-    specialtyChart2_3
-  },
+  components: {},
   data() {
     return {
       img1Url: require("../assets/img/pho1.png")
@@ -77,6 +57,9 @@ export default {
       console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
+      console.log(key, keyPath);
+    },
+    handleSelect(key, keyPath) {
       console.log(key, keyPath);
     }
   }

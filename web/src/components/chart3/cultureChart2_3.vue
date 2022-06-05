@@ -35,6 +35,9 @@ export default {
           boundaryGap: [0, 0.01],
           axisLine: {
             show: true,
+            symbol: ["none", "arrow"],
+            symbolSize: [5, 10],
+            symbolOffset: 10
           },
           max: 11,
           min: 0,
@@ -49,6 +52,9 @@ export default {
           type: "category",
           axisLine: {
             show: true,
+            symbol: ["none", "arrow"],
+            symbolSize: [5, 11],
+            symbolOffset: 8
           },
           data: ["农副 产品", "手工 艺品", "工艺 产品"].map(function (str) {
             return str.replace(" ", "\n");
@@ -68,19 +74,19 @@ export default {
                 /*第五个参数则是一个数组，用于配置颜色的渐变过程。
                           每项为一个对象，包含offset和color两个参数
                         */
+                0,
+                0,
                 1,
-                0,
-                0,
                 0,
                 [
                   {
                     //代表渐变色从正上方开始
                     offset: 0, //offset范围是0~1，用于表示位置，0是指0%处的颜色
-                    color: "#005BEA",
+                    color: "#dd804c",
                   }, //柱图渐变色
                   {
                     offset: 1, //指100%处的颜色
-                    color: "#00C6FB",
+                    color: "#e6c797",
                   },
                 ]
               ),

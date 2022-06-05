@@ -1,7 +1,7 @@
 <template>
   <div class="Echart">
     <div
-      id="culecharts2_2"
+      id="culecharts4_1"
       style="width: 100%; height: 180px; margin-left: 10px"
     ></div>
   </div>
@@ -9,26 +9,27 @@
 
 <script>
 export default {
-  name: "cultureChart2_2",
+  name: "cultureChart4_1",
   mounted() {
-    this.myChart = this.$echarts.init(document.getElementById("culecharts2_2"));
+    this.myChart = this.$echarts.init(document.getElementById("culecharts4_1"));
     this.updateEcharts();
   },
   methods: {
     updateEcharts() {
       this.option = {
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            type: "shadow",
+          },
+          transitionDuration: 0,
+        },
         grid: {
           // top:"1%",
           left: "3%",
           right: "4%",
           bottom: "0%",
           containLabel: true,
-        },
-        tooltip: {
-          trigger: "axis",
-          axisPointer: {
-            type: "shadow",
-          },
         },
         xAxis: {
           type: "category",
@@ -47,7 +48,7 @@ export default {
             symbolSize: [5, 10],
             symbolOffset: 8
           },
-          data: ["太行风情", "峡谷宾馆", "农家惠馆"],
+          data: ["大众", "小吃", "特色"],
         },
         yAxis: {
           name: "日收入（万元）",
@@ -76,7 +77,7 @@ export default {
         ],
         series: [
           {
-            data: [4, 3, 2],
+            data: [3, 2.5, 2],
             type: "bar",
             showBackground: false,
             barWidth: "16px", //柱体宽度

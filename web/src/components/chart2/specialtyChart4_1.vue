@@ -1,17 +1,14 @@
 <template>
-  <div class="Echart">
-    <div
-      id="culecharts1_2"
-      style="width: 100%; height: 240px; margin-left: 10px"
-    ></div>
+  <div class="Echarts">
+    <div id="echarts4_1" style="width: 100%; height: 190px; margin-left:10px"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "cultureChart1_2",
+  name: "specialtyChart4_1",
   mounted() {
-    this.myChart = this.$echarts.init(document.getElementById("culecharts1_2"));
+    this.myChart = this.$echarts.init(document.getElementById("echarts4_1"));
     this.updateEcharts();
   },
   methods: {
@@ -19,72 +16,66 @@ export default {
       this.option = {
         title: [
           {
-            subtext: "房间数量",
+            subtext: "累计收入",
             x: 40,
-            y: 2,
-          },
+            y: 0
+          }
         ],
-
         tooltip: {
           trigger: "item",
-          formatter: "{b} : {c} ({d}%)",
-          transitionDuration: 0,
+          formatter: "{b} : {c}万 ({d}%)"
         },
-        color:['#cb2440','#216cb6'],
         series: [
           {
             // name: "Nightingal111e Chart",
             type: "pie",
-            radius: 50,
-            center: ["40%", "40%"],
+            radius: [15, 60],
+            center: ["50%", "50%"],
+            roseType: "area",
             label: {
               show: true,
               position: "inner",
-              formatter: "{d}%",
+              formatter: "{d}%"
             },
             emphasis: {
               label: {
-                show: true,
-              },
+                show: true
+              }
             },
             itemStyle: {
-              borderRadius: 3,
+              borderRadius: 3
             },
             data: [
-              { value: 1400, name: "已入住" },
-              { value: 1600, name: "未入住" },
-            ],
-            left: 30,
-            right: 30,
-            top: 0,
-            bottom: 0,
-          },
+              { value: 60, name: "电动车" },
+              { value: 18, name: "自行车" },
+              { value: 24, name: "其他" }
+            ]
+          }
         ],
         graphic: [
           {
             type: "group",
-            // top: 30,
             left: "center",
-            bottom: 0,
+            bottom: 10,
             children: [
               {
                 type: "rect",
                 z: 100,
-                left: -16,
+                left: -55,
                 top: 0,
                 shape: {
                   width: 100,
-                  height: 50,
+                  height: 20
                 },
                 style: {
-                  fill: "#f7f7f7",
+                  fill: "#f7f7f7"
                   //   stroke: "#555",
                   //   lineWidth: 2
                   //   shadowBlur: 8,
                   //   shadowOffsetX: 3,
                   //   shadowOffsetY: 3,
                   //   shadowColor: "rgba(0,0,0,0.3)"
-                },
+                }
               },
               {
                 type: "text",
@@ -94,20 +85,21 @@ export default {
                 style: {
                   fill: "#333",
                   text: [
-                    "· 已入住：1400家",
-                    "· 未入住：1600家",
+                    "· 电动车：60万",
+                    "· 自行车：18万",
+                    "· 其   他：24万"
                   ].join("\n"),
-                  font: "14px Microsoft YaHei",
-                },
-              },
-            ],
-          },
-        ],
+                  font: "14px Microsoft YaHei"
+                }
+              }
+            ]
+          }
+        ]
       };
 
       this.myChart.setOption(this.option);
-    },
-  },
+    }
+  }
 };
 </script>
 
