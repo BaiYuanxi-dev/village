@@ -1,6 +1,6 @@
 <template>
   <div class="Echarts">
-    <div id="echarts2_2" style="width: 100%; height: 240px; margin-left:10px"></div>
+    <div id="echarts2_2" style="width: 100%; height: 190px; margin-left:10px"></div>
   </div>
 </template>
 
@@ -22,8 +22,10 @@ export default {
         },
         legend: {},
         grid: {
+          x: 0,
           y: 30,
           height: 140,
+          width: 130,
           containLabel: true
         },
         xAxis: {

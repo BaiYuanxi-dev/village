@@ -72,6 +72,18 @@
             <specialtyChart2_3></specialtyChart2_3>
           </el-col>
         </el-row>
+        <div id="out">出行数据</div>
+        <el-row>
+          <el-col :span="8">
+            <specialtyChart3_1></specialtyChart3_1>
+          </el-col>
+          <el-col :span="8">
+            <specialtyChart3_2></specialtyChart3_2>
+          </el-col>
+          <el-col :span="8">
+            <specialtyChart3_3></specialtyChart3_3>
+          </el-col>
+        </el-row>
       </div>
     </el-col>
     <el-col :span="7">
@@ -236,7 +248,8 @@ export default {
 
 #union,
 #purchase,
-#live {
+#live,
+#out {
   background-color: #fafafa;
   text-align: left;
   padding-left: 35px;
